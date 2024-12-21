@@ -12,21 +12,22 @@ def main():
     model = DQN(
         "MlpPolicy",
         env,
-        learning_rate=1e-4,
-        buffer_size=100000,
-        learning_starts=1000,
-        batch_size=64,
-        gamma=0.99,
-        train_freq=8,
-        target_update_interval=500,
-        exploration_fraction=0.3,
-        exploration_final_eps=0.02,
-        verbose=1,
+        learning_rate=2.5e-4,         
+        buffer_size=200000,            
+        learning_starts=5000,          
+        batch_size=128,               
+        gamma=0.98,                    
+        train_freq=4,                  
+        target_update_interval=1000,   
+        exploration_fraction=0.2,      
+        exploration_final_eps=0.05,    
+        policy_kwargs=dict(net_arch=[256, 256]),        
+        verbose=1
     )
 
     # Train the model
     print("Training the agent...")
-    model.learn(total_timesteps=100000)
+    model.learn(total_timesteps=100000,log_interval=100)
 
     # Evaluate the model
     print("Evaluating the agent...")
