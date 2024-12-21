@@ -1,6 +1,6 @@
  # RL-Treasure-Hunter
 
-RL-Treasure-Hunter is a reinforcement learning project that implements an AI agent capable of navigating a 10x10 grid world to find a treasure while avoiding dynamic obstacles (monsters). The agent uses the Q-Learning algorithm, implemented via the Stable Baselines3 library.
+RL-Treasure-Hunter is a reinforcement learning project that implements an AI agent capable of navigating a 10x10 grid world to find a treasure while avoiding dynamic obstacles (monsters). The agent uses the Q-Learning algorithm, implemented via the Stable Baselines3 library. Thsi project is made for the AI Internship Technical test for Jumbo Mana
 
 ## Project Structure
 
