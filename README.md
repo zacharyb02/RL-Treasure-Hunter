@@ -80,4 +80,6 @@ After testing, the `test.py` script also generates a video showcasing the agent'
 ## Results
 
 - **Evaluation Reward:** Mean: 117.20 ± 84.38
+![alt text](https://github.com/zacharyb02/RL-Treasure-Hunter/blob/main/episode_rewards.png?raw=true)
+
 
