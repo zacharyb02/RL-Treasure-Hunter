@@ -10,11 +10,16 @@ RL-Treasure-Hunter/
 │   ├── frame_0000.png
 │   ├── frame_0001.png
 │   └── ...
+├── logs/                   # Saved logs
+│   └── evaluations.npz
 ├── model/                  # Saved models
 │   └── dqn_agent.zip       # Trained model
 ├── src/                    # Source code
+│   ├── callbacks.py        # Callbacks
 │   ├── environment.py      # Environment definition
 │   ├── main.py             # Training script
+│   ├── plot.py             # Ploting script
+│   ├── runtest.py          # To run a test
 │   └── test.py             # Testing script
 ├── video/                  # Videos generated during testing
 │   └── agent_performance.mp4
