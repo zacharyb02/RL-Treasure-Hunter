@@ -17,14 +17,21 @@ class GridWorldEnv(gym.Env):
         self.agent_pos = np.array([
             random.randint(0, self.grid_size - 1),
             random.randint(0, self.grid_size - 1)
-        ])  
+        ])
         self.goal_pos = np.array([self.grid_size - 1, self.grid_size - 1])  # Bottom-right
         self.monsters = []
         while len(self.monsters) < self.num_monsters:
             monster = np.array([random.randint(0, self.grid_size - 1), random.randint(0, self.grid_size - 1)])
-            if not any(np.array_equal(monster, m) for m in self.monsters) and not np.array_equal(monster, self.agent_pos) and not np.array_equal(monster, self.goal_pos):
+            if not any(np.array_equal(monster, m) for m in self.monsters) \
+                and not np.array_equal(monster, self.agent_pos) \
+                and not self.is_adjacent(monster, self.agent_pos) \
+                and not np.array_equal(monster, self.goal_pos):
                 self.monsters.append(monster)
         return self.get_state()
+    
+    def is_adjacent(self, pos1, pos2):
+        """Check if pos2 is adjacent to pos1."""
+        return abs(pos1[0] - pos2[0]) <= 1 and abs(pos1[1] - pos2[1]) <= 1
 
     def get_state(self):
         # Return relative positions of the goal and closest monster
@@ -67,6 +74,7 @@ class GridWorldEnv(gym.Env):
         self.move_monsters()
 
         return self.get_state(), reward, False, {}
+
 
     def move_monsters(self):
         for monster in self.monsters:

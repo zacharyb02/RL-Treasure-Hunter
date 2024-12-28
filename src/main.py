@@ -1,9 +1,10 @@
 from stable_baselines3 import DQN
 from environment import GridWorldEnv
 from plot import plot_save_results
+from callbacks import *
 from test import test
 from stable_baselines3.common.evaluation import evaluate_policy
-from stable_baselines3.common.callbacks import EvalCallback, CheckpointCallback
+from stable_baselines3.common.callbacks import EvalCallback, CallbackList
 import os
 from moviepy import ImageSequenceClip
 
@@ -37,14 +38,18 @@ def main():
         render=False
     )
 
+    success_callback = SuccessRateCallback(env, log_path='./logs/', eval_freq=500, deterministic=True, render=False)
+    callbacks = CallbackList([success_callback, eval_callback])
+
     # Train the model
     print("Training the agent...")
-    model.learn(total_timesteps=100000,log_interval=100, callback=eval_callback)
+    model.learn(total_timesteps=100000,log_interval=100, callback=callbacks)
 
     # Evaluate the model
     print("Evaluating the agent...")
     mean_reward, std_reward = evaluate_policy(model, env, n_eval_episodes=10)
     print(f"Mean reward: {mean_reward} \u00b1 {std_reward}")
+    print("Success rate:", success_callback.get_success_rate())
 
     # Plot and save the evaluation results
     plot_save_results('./logs')
