@@ -79,5 +79,5 @@ After testing, the `test.py` script also generates a video showcasing the agent'
 
 ## Results
 
-- **Evaluation Reward:** Mean: 126.50 ± 64.74
+- **Evaluation Reward:** Mean: 117.20 ± 84.38
 

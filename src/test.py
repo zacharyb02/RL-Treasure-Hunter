@@ -49,6 +49,3 @@ def test():
     video_path = "video/agent_performance.mp4"
     print("Creating a video from captured frames...")
     create_video_from_frames(output_dir, video_path, fps=5)  # Reduced fps for better visibility
-
-if __name__ == "__main__":
-    test()

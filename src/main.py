@@ -1,6 +1,7 @@
 from stable_baselines3 import DQN
 from environment import GridWorldEnv
 from plot import plot_save_results
+from test import test
 from stable_baselines3.common.evaluation import evaluate_policy
 from stable_baselines3.common.callbacks import EvalCallback, CheckpointCallback
 import os
@@ -30,7 +31,6 @@ def main():
     # Callback for evaluation
     eval_callback = EvalCallback(
         env, 
-        best_model_save_path='./logs/',
         log_path='./logs/', 
         eval_freq=500,
         deterministic=True, 
@@ -61,5 +61,7 @@ def main():
         obs, reward, done, info = env.step(action)
         env.render()  # Visualize the environment
 
+
 if __name__ == "__main__":
     main()
+    test()
