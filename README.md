@@ -79,7 +79,5 @@ After testing, the `test.py` script also generates a video showcasing the agent'
 
 ## Results
 
-- **Average Episode Length:** ~13 steps
-- **Average Reward:** ~114
-- **Evaluation Reward:** Mean: 98.79 ± 92.85
+- **Evaluation Reward:** Mean: 126.50 ± 64.74
 

@@ -1,6 +1,8 @@
 from stable_baselines3 import DQN
 from environment import GridWorldEnv
+from plot import plot_save_results
 from stable_baselines3.common.evaluation import evaluate_policy
+from stable_baselines3.common.callbacks import EvalCallback, CheckpointCallback
 import os
 from moviepy import ImageSequenceClip
 
@@ -25,14 +27,27 @@ def main():
         verbose=1
     )
 
+    # Callback for evaluation
+    eval_callback = EvalCallback(
+        env, 
+        best_model_save_path='./logs/',
+        log_path='./logs/', 
+        eval_freq=500,
+        deterministic=True, 
+        render=False
+    )
+
     # Train the model
     print("Training the agent...")
-    model.learn(total_timesteps=100000,log_interval=100)
+    model.learn(total_timesteps=100000,log_interval=100, callback=eval_callback)
 
     # Evaluate the model
     print("Evaluating the agent...")
     mean_reward, std_reward = evaluate_policy(model, env, n_eval_episodes=10)
     print(f"Mean reward: {mean_reward} \u00b1 {std_reward}")
+
+    # Plot and save the evaluation results
+    plot_save_results('./logs')
 
     print("Saving the model...")
     model.save("model/dqn_agent")
