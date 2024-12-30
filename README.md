@@ -88,4 +88,8 @@ After testing, the `test.py` script also generates a video showcasing the agent'
 - **Evaluation Reward:** Mean: 130.13567104144022 ± 60.14024777453229
 ![alt text](https://github.com/zacharyb02/RL-Treasure-Hunter/blob/main/episode_rewards.png?raw=true)
 
+## Visualization
 
+A visualization of the hero’s path during testing and a demonstration of the AI’s behavior.
+
+![Video Demo](https://github.com/zacharyb02/RL-Treasure-Hunter/tree/main/agent_performance.gif)
