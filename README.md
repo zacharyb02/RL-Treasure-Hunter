@@ -92,4 +92,4 @@ After testing, the `test.py` script also generates a video showcasing the agent'
 
 A visualization of the hero’s path during testing and a demonstration of the AI’s behavior.
 
-![Video Demo](https://github.com/zacharyb02/RL-Treasure-Hunter/tree/main/agent_performance.gif)
+![Video Demo](https://github.com/zacharyb02/RL-Treasure-Hunter/blob/main/agent_performance.gif)
