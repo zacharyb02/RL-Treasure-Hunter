@@ -71,9 +71,9 @@ After testing, the `runtest.py` script also generates a video showcasing the age
 
 ## Features
 
-- **Dynamic Obstacles:** The environment includes dynamic monsters with configurable movement patterns.
+- **Dynamic Obstacles:** The setting features unpredictable monsters that move randomly.
 - **Random Start Position:** The agent starts from a random position on the grid in every episode.
-- **Training Metrics:** Logs rewards, losses, and other metrics for evaluation.
+- **Training Metrics:** Logs rewards, success rates, and additional metrics for assessment.
 - **Visualization:** Generates videos to visualize the agent's behavior during testing.
 
 ## Code Structure
