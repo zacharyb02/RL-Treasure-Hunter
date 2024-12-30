@@ -57,17 +57,17 @@ This script initializes the GridWorld environment, trains the agent using DQN, a
 
 ### 2. Test the Agent
 
-To test the trained agent and visualize its performance, run the `test.py` script:
+To test the trained agent and visualize its performance, run the `runtest.py` script:
 
 ```bash
-python src/test.py
+python src/runtest.py
 ```
 
 This script loads the trained model, captures the agent's path as frames, and saves them in the `frames/` directory.
 
 ### 3. Generate a Video
 
-After testing, the `test.py` script also generates a video showcasing the agent's performance, saved in the `video/` directory as `agent_performance.mp4`.
+After testing, the `runtest.py` script also generates a video showcasing the agent's performance, saved in the `video/` directory as `agent_performance.mp4`.
 
 ## Features
 
